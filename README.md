@@ -22,7 +22,7 @@ npm install -S crossvent
 
 The API exposes a few methods that let you deal with event handling in a consistent manner across browsers.
 
-### `crossvent.add(el, type, fn)`
+### `crossvent.add(el, type, fn, capturing?)`
 
 Adds an event listener `fn` of type `type` to DOM element `el`.
 

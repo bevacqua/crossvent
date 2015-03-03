@@ -9,12 +9,12 @@ if (!global.addEventListener) {
   removeEvent = removeEventHard;
 }
 
-function addEventEasy (el, type, fn) {
-  return el.addEventListener(type, fn);
+function addEventEasy (el, type, fn, capturing) {
+  return el.addEventListener(type, fn, capturing);
 }
 
-function addEventHard (el, type, fn) {
-  return el.attachEvent('on' + type, wrap(el, type, fn));
+function addEventHard (el, type, fn, capturing) {
+  return el.attachEvent('on' + type, wrap(el, type, fn), capturing);
 }
 
 function removeEventEasy (el, type, fn) {
