@@ -17,8 +17,8 @@ function addEventHard (el, type, fn, capturing) {
   return el.attachEvent('on' + type, wrap(el, type, fn), capturing);
 }
 
-function removeEventEasy (el, type, fn) {
-  return el.removeEventListener(type, fn);
+function removeEventEasy (el, type, fn, capturing) {
+  return el.removeEventListener(type, fn, capturing);
 }
 
 function removeEventHard (el, type, fn) {
