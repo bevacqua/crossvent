@@ -21,8 +21,8 @@ function removeEventEasy (el, type, fn, capturing) {
   return el.removeEventListener(type, fn, capturing);
 }
 
-function removeEventHard (el, type, fn) {
-  return el.detachEvent('on' + type, unwrap(el, type, fn));
+function removeEventHard (el, type, fn, capturing) {
+  return el.detachEvent('on' + type, unwrap(el, type, fn), capturing);
 }
 
 function fabricateEvent (el, type) {
