@@ -32,7 +32,7 @@ crossvent.add(document.body, 'click', function (e) {
 });
 ```
 
-### `crossvent.remove(el, type, fn)`
+### `crossvent.remove(el, type, fn, capturing?)`
 
 Removes an event listener `fn` of type `type` from DOM element `el`.
 
