@@ -1,3 +1,7 @@
+# v1.3.1 Fire Bug
+
+- Use `fireEvent` and `createEventObject` when their modern counterparts are missing
+
 # v1.2.0 Flag The Bug
 
 - Added ability to use a `capture` parameter in event removal as well

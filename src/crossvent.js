@@ -1,5 +1,6 @@
 'use strict';
 
+var doc = document;
 var addEvent = addEventEasy;
 var removeEvent = removeEventEasy;
 var hardCache = [];
@@ -13,22 +14,28 @@ function addEventEasy (el, type, fn, capturing) {
   return el.addEventListener(type, fn, capturing);
 }
 
-function addEventHard (el, type, fn, capturing) {
-  return el.attachEvent('on' + type, wrap(el, type, fn), capturing);
+function addEventHard (el, type, fn) {
+  return el.attachEvent('on' + type, wrap(el, type, fn));
 }
 
 function removeEventEasy (el, type, fn, capturing) {
   return el.removeEventListener(type, fn, capturing);
 }
 
-function removeEventHard (el, type, fn, capturing) {
-  return el.detachEvent('on' + type, unwrap(el, type, fn), capturing);
+function removeEventHard (el, type, fn) {
+  return el.detachEvent('on' + type, unwrap(el, type, fn));
 }
 
 function fabricateEvent (el, type) {
-  var e = document.createEvent('Event');
-  e.initEvent(type, true, true);
-  el.dispatchEvent(e);
+  var e;
+  if (doc.createEvent) {
+    e = doc.createEvent('Event');
+    e.initEvent(type, true, true);
+    el.dispatchEvent(e);
+  } else if (doc.createEventObject) {
+    e = doc.createEventObject();
+    el.fireEvent('on' + type, e);
+  }
 }
 
 function wrapperFactory (el, type, fn) {
