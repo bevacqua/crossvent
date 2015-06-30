@@ -1,3 +1,7 @@
+# v1.3.2 Ice Bug
+
+- `e.which` gets normalized across browsers, `e.keyCode` is used if not present
+
 # v1.3.1 Fire Bug
 
 - Use `fireEvent` and `createEventObject` when their modern counterparts are missing
