@@ -1,5 +1,6 @@
 'use strict';
 
+var customEvent = require('custom-event');
 var doc = document;
 var addEvent = addEventEasy;
 var removeEvent = removeEventEasy;
@@ -26,14 +27,11 @@ function removeEventHard (el, type, fn) {
   return el.detachEvent('on' + type, unwrap(el, type, fn));
 }
 
-function fabricateEvent (el, type) {
-  var e;
-  if (doc.createEvent) {
-    e = doc.createEvent('Event');
-    e.initEvent(type, true, true);
+function fabricateEvent (el, type, model) {
+  var e = new customEvent(type, { detail: model });
+  if (el.dispatchEvent) {
     el.dispatchEvent(e);
-  } else if (doc.createEventObject) {
-    e = doc.createEventObject();
+  } else {
     el.fireEvent('on' + type, e);
   }
 }

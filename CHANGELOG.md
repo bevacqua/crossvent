@@ -1,3 +1,7 @@
+# v1.4.0 Fabricator
+
+- Added optional custom event model for `.fabricate`
+
 # v1.3.2 Ice Bug
 
 - `e.which` gets normalized across browsers, `e.keyCode` is used if not present

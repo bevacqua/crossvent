@@ -45,16 +45,16 @@ function clicked (e) {
 }
 ```
 
-### `crossvent.fabricate(el, type)`
+### `crossvent.fabricate(el, type, model?)`
 
-Creates a synthetic event of type `type` and dispatches it on `el`.
+Creates a synthetic custom event of type `type` and dispatches it on `el`. You can provide a custom `model` which will be accessible as `e.detail`.
 
 ```js
 crossvent.add(document.body, 'sugar', sugary);
-crossvent.fabricate(document.body, 'sugar');
+crossvent.fabricate(document.body, 'sugar', { onTop: true });
 
 function sugary (e) {
-  console.log('synthetic sugar event raised');
+  console.log('synthetic sugar' + e.detail.onTop ? ' on top' : '');
 }
 ```
 
