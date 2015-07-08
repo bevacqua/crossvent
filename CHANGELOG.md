@@ -1,3 +1,7 @@
+# v1.5.0 Classic Poets
+
+- Fall back to classic events for non-made-up event types
+
 # v1.4.0 Fabricator
 
 - Added optional custom event model for `.fabricate`
