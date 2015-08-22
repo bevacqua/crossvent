@@ -1,3 +1,7 @@
+# v1.5.1 Power Up
+
+- Crossvent now exports an empty API on the server-side, instead of throwing
+
 # v1.5.0 Classic Poets
 
 - Fall back to classic events for non-made-up event types

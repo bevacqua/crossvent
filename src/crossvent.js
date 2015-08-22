@@ -2,7 +2,10 @@
 
 var customEvent = require('custom-event');
 var eventmap = require('./eventmap');
-var doc = document;
+var doc = global.document;
+if (!doc) {
+  return;
+}
 var addEvent = addEventEasy;
 var removeEvent = removeEventEasy;
 var hardCache = [];
