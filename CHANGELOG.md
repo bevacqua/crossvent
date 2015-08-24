@@ -1,3 +1,7 @@
+# v1.5.2 Fix Up
+
+- Fixed a bug in IE8 where attempting to remove an undefined event listener would throw
+
 # v1.5.1 Power Up
 
 - Crossvent now exports an empty API on the server-side, instead of throwing
