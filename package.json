@@ -1,7 +1,7 @@
 {
   "name": "crossvent",
   "description": "Cross-platform browser event handling",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "homepage": "https://github.com/bevacqua/crossvent",
   "author": {
     "email": "hello@bevacqua.io",
