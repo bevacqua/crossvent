@@ -12,6 +12,12 @@ if (!global.addEventListener) {
   removeEvent = removeEventHard;
 }
 
+module.exports = {
+  add: addEvent,
+  remove: removeEvent,
+  fabricate: fabricateEvent
+};
+
 function addEventEasy (el, type, fn, capturing) {
   return el.addEventListener(type, fn, capturing);
 }
