@@ -1,3 +1,7 @@
+# 1.5.3 Mortal Kombat 3
+
+- Crossvent now ignores API limitations on the server-side, instead of throwing
+
 # v1.5.2 Fix Up
 
 - Fixed a bug in IE8 where attempting to remove an undefined event listener would throw
