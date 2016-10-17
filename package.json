@@ -32,6 +32,6 @@
     "vinyl-source-stream": "^0.1.1"
   },
   "dependencies": {
-    "custom-event": "1.0.0"
+    "custom-event": "^1.0.0"
   }
 }
